@@ -41,7 +41,7 @@ resource "null_resource" "mongodb" {
     # Bootstrap script called with private_ip of each node in the cluster
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo /tmp/bootstrap.sh mongodb dev" # you need to provide the arguments for shell script
+      "sudo /tmp/bootstrap.sh mongodb ${var.environment}" # you need to provide the arguments for shell script
     ]
   }
 }
@@ -79,7 +79,7 @@ resource "null_resource" "redis" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo /tmp/bootstrap.sh redis dev" # you need to provide the arguments for shell script
+      "sudo /tmp/bootstrap.sh redis ${var.environment}" # you need to provide the arguments for shell script
     ]
   }
 }
@@ -120,7 +120,7 @@ resource "null_resource" "mysql" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo /tmp/bootstrap.sh mysql dev" # you need to provide the arguments for shell script
+      "sudo /tmp/bootstrap.sh mysql ${var.environment}" # you need to provide the arguments for shell script
     ]
   }
 }
@@ -162,7 +162,7 @@ resource "null_resource" "rabbitmq" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo /tmp/bootstrap.sh rabbitmq dev" # you need to provide the arguments for shell script
+      "sudo /tmp/bootstrap.sh rabbitmq ${var.environment}" # you need to provide the arguments for shell script
     ]
   }
 }
@@ -178,28 +178,28 @@ module "records" {
 
   records = [
     {
-      name    = "mongodb-dev"
+      name    = "mongodb-${var.environment}"
       type    = "A"
       ttl     = 1
       records = [
         module.mongodb.private_ip,
       ]
     },{
-      name    = "redis-dev"
+      name    = "redis-${var.environment}"
       type    = "A"
       ttl     = 1
       records = [
         module.redis.private_ip,
       ]
     },{
-      name    = "mysql-dev"
+      name    = "mysql-${var.environment}"
       type    = "A"
       ttl     = 1
       records = [
         module.mysql.private_ip,
       ]
     },{
-      name    = "rabbitmq-dev"
+      name    = "rabbitmq-${var.environment}"
       type    = "A"
       ttl     = 1
       records = [
