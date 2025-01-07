@@ -7,10 +7,10 @@ terraform {
   }
 
     backend "s3" {
-    bucket         = "pka.in.net-dev"
+    bucket         = "pka.in.net-prod"
     key            = "vpn"
     region         = "us-east-1"
-    dynamodb_table = "pka.in.net-dev"
+    dynamodb_table = "pka.in.net-prod"
   }
 }
 
