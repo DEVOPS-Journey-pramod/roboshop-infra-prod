@@ -1,5 +1,5 @@
 variable "robobshop_vpc_cidr" {
-    default = "10.1.0.0/16"
+    default = "192.168.0.0/16"
     type = string
 }
 
@@ -27,21 +27,21 @@ variable "project_environment" {
 
 variable "public_subnet_cidr" {
   default = [
-    "10.1.1.0/24",
-    "10.1.2.0/24"
+    "192.168.1.0/24",
+    "192.168.2.0/24"
   ]
 }
 
 variable "private_subnet_cidr" {
   default = [
-    "10.1.11.0/24",
-    "10.1.12.0/24"
+    "192.168.11.0/24",
+    "192.168.12.0/24"
   ]
 }
 variable "database_subnet_cidr" {
   default = [
-    "10.1.21.0/24",
-    "10.1.22.0/24"
+    "192.168.21.0/24",
+    "192.168.22.0/24"
   ]
 }
 
