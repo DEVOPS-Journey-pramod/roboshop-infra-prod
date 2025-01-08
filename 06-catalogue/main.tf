@@ -61,7 +61,7 @@ resource "null_resource" "catalogue" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo sh /tmp/bootstrap.sh catalogue dev" # you need to provide the arguments for shell script to get it executed by remote-exec
+      "sudo sh /tmp/bootstrap.sh catalogue prod" # you need to provide the arguments for shell script to get it executed by remote-exec
     ]
   }
 }
