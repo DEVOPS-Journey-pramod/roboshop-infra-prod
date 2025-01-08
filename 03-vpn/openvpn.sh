@@ -18,4 +18,4 @@ curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openv
 chmod +x openvpn-install.sh
 ./openvpn-install.sh
 #once config is complete lets copy the client.ovpn file to the local machine we can download with mobaxterm
-cp /root/devops76s_prod.ovpn /home/centos
+cp /root/devops76s.ovpn /home/centos/devops76s_prod.ovpn
