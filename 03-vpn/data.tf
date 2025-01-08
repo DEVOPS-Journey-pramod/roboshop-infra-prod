@@ -29,7 +29,7 @@ data "aws_subnet" "default_vpc_subnet" {
 }
 
 data "aws_ssm_parameter" "default_vpn_sg_id" {
-  name = "/${var.project_name}/${var.environment}/vpn_sg_id"
+  name = "/${var.project_name}/${var.environment}/prod_vpn_sg_id"
 }
 # this block is invalid block , i wrote this by mistake and spent almost half day in debugging this
 # terraform will show error that the vpn module is not avialable in terraform registry 
