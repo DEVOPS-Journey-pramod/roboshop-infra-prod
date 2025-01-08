@@ -40,9 +40,10 @@ resource "null_resource" "mongodb" {
   provisioner "remote-exec" {
     # Bootstrap script called with private_ip of each node in the cluster
     inline = [
+      "set -xe",
       "chmod +x /tmp/bootstrap.sh",
       "echo ${var.environment}",
-      "sudo /tmp/bootstrap.sh mongodb ${var.environment}" # you need to provide the arguments for shell script
+      "sudo /tmp/bootstrap.sh mongodb prod" # you need to provide the arguments for shell script
     ]
   }
 }
