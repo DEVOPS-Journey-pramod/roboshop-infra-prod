@@ -1,7 +1,11 @@
 #!/bin/bash
+clear
+set -xe
 echo "installing ansible"
 component=$1
 envionment=$2 # dont use env here , its a reserved keyword in linux
+echo "component $component"
+echo "envionment $envionment"
 #  we are installign asnbile with python pip
 yum install python 3.11-devel python3.11-pip -y
 pip3 install ansible botocore boto3 
