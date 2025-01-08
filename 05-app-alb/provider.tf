@@ -7,7 +7,7 @@ terraform {
   }
     backend "s3" {
     bucket = "pka.in.net-prod"
-    key    = "app-alb"
+    key    = "app-alb-jenkins-prod"
     region = "us-east-1"
     dynamodb_table = "pka.in.net-prod"
   }

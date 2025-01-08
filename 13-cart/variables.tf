@@ -4,7 +4,7 @@ variable "project_name" {
 }
 
 variable "environment" {
-  default = "dev"
+  default = "prod"
 }
 
 variable "iam_instance_profile" {
@@ -14,7 +14,7 @@ variable "iam_instance_profile" {
 variable "common_tags" {
   default = {
     Project     = "roboshop"
-    Environment = "dev"
+    Environment = "prod"
     Terraform   = "true"
   }
 }

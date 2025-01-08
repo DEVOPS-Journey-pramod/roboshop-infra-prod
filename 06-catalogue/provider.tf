@@ -6,10 +6,10 @@ terraform {
     }
   }
     backend "s3" {
-    bucket = "pka.in.net-dev"
-    key    = "catalogue"
+    bucket = "pka.in.net-prod"
+    key    = "catalogue-jenkins-prod"
     region = "us-east-1"
-    dynamodb_table = "pka.in.net-dev"
+    dynamodb_table = "pka.in.net-prod"
   }
 }
 
