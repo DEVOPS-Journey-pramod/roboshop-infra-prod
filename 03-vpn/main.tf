@@ -27,7 +27,7 @@ module "records" {
 
   records = [
     {
-      name    = "vpn"
+      name    = "vpn-prod"
       type    = "A"
       ttl     = 1
       records = [

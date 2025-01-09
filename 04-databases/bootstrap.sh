@@ -1,11 +1,7 @@
 #!/bin/bash
-clear
-set -xe
 echo "installing ansible"
 component=$1
-environment=$2 # dont use env here , its a reserved keyword in linux
-echo "component $component"
-echo "environment $environment"
+envionment=$2 # dont use env here , its a reserved keyword in linux
 #  we are installign asnbile with python pip
 yum install python 3.11-devel python3.11-pip -y
 pip3 install ansible botocore boto3 
@@ -13,5 +9,5 @@ pip3 install ansible botocore boto3
 # ansible pull will be used to pull the playbooks from the git repository
 # ansible pull is localhost because its installing in its own machine not connecting to any other servers for installation
 # we usually use ansible pull with cron job
-ansible-pull -U https://github.com/PramodCodes/roboshop-ansible-roles-tf.git -e component=$component -e env=$environment main-tf.yaml -vvv
+ansible-pull -U https://github.com/PramodCodes/roboshop-ansible-roles-tf.git -e component=$component -e env=$envionment main-tf.yaml -vvv
 
