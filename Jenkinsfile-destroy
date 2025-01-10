@@ -31,18 +31,18 @@ pipeline{
         
             stage('deestroy catalogue deployment') {
                     steps {
-                    sh """
-                        echo "current build version is ${params.version}"
-                        echo "Environment is ${params.environment}"
-                        echo 'destroying 06.5-catalogue prod deployment'
-                        git clone https://github.com/PramodCodes/catalogue-deploy.git
-                        cd catalogue-deploy
-                        pwd
-                        terraform init --backend-config=prod/backend.tf -reconfigure
-                        terraform apply -var-file=prod/prod.tfvars -var=app_version=${params.version} -auto-approve
-                        pwd
-                        echo 'catalogue deployment destroyed'
-                    """
+                    // sh """
+                    //     echo "current build version is ${params.version}"
+                    //     echo "Environment is ${params.environment}"
+                    //     echo 'destroying 06.5-catalogue prod deployment'
+                    //     git clone https://github.com/PramodCodes/catalogue-deploy.git
+                    //     cd catalogue-deploy
+                    //     pwd
+                    //     terraform init --backend-config=prod/backend.tf -reconfigure
+                    //     terraform apply -var-file=prod/prod.tfvars -var=app_version=${params.version} -auto-approve
+                    //     pwd
+                    //     echo 'catalogue deployment destroyed'
+                    // """
                     }
             }
             stage('06-catalogue') {
