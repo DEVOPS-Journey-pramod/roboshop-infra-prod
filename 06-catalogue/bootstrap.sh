@@ -5,11 +5,11 @@ environment=$2 #dont use env here, it is reserved in linux
 #pip3.11 install ansible botocore boto3
 dnf install -y python3.8
 alternatives --set python3 /usr/bin/python3.8
+dnf install -y ansible
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade ansible
-sudo dnf install -y ansible
-sudo dnf install -y epel-release
-sudo dnf install -y botocore
-sudo dnf install -y boto3
+dnf install -y epel-release
+python3 -m pip install --upgrade botocore
+python3 -m pip install --upgrade boto3
 
 ansible-pull -U https://github.com/PramodCodes/roboshop-ansible-roles-tf.git -e component=$component -e env=$environment main-tf.yaml
