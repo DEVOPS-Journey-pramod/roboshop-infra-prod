@@ -7,10 +7,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "daws76s-state-dev"
-    key            = "acm"
+    bucket         = "pka.in.net-prod"
+    key            = "acm-prod"
     region         = "us-east-1"
-    dynamodb_table = "daws76s-locking-dev"
+    dynamodb_table = "pka.in.net-prod"
   }
 }
 
