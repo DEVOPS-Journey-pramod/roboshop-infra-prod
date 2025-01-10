@@ -20,18 +20,18 @@ pipeline{
         packageVersion = ''
         nexusURL = 'nexus.pka.in.net:8081'
     }
-    parameters {
+    // parameters {
         // string(name: 'version', defaultValue: '', description: 'what is the artifact version?')
         // string(name: 'environment', defaultValue: '', description: 'what is the Environment?')
 
-    }
+    // }
     //build stages
     
     stages {
         
-            stage('deestroy catalogue deployment') {
-                    steps {
-                    sh """
+            // stage('deestroy catalogue deployment') {
+            //         steps {
+            //         sh """
                         // echo "current build version is ${params.version}"
                         // echo "Environment is ${params.environment}"
                         // echo 'destroying 06.5-catalogue prod deployment'
@@ -43,9 +43,9 @@ pipeline{
                         // terraform apply -var-file=prod/prod.tfvars -var=app_version=${params.version} -auto-approve
                         // pwd
                         echo 'catalogue deployment destroyed'
-                    """
-                    }
-            }
+                    // """
+                    // }
+            // }
             stage('06-catalogue') {
                     steps {
                     sh """
