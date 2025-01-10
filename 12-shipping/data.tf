@@ -6,7 +6,7 @@ data "aws_ssm_parameter" "shipping_sg_id" {
   name = "/${var.project_name}/${var.environment}/shipping_sg_id"
 }
 
-data "aws_ssm_parameter" "private_subnet_ids" {
+data "aws_ssm_parameter" "private_subnets_ids" {
   name = "/${var.project_name}/${var.environment}private_subnets_ids"
 }
 

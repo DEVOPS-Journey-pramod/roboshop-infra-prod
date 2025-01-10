@@ -21,7 +21,7 @@ module "web" {
   name                   = "${local.name}-${var.tags.Component}-ami"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [data.aws_ssm_parameter.web_sg_id.value]
-  subnet_id              = element(split(",", data.aws_ssm_parameter.private_subnet_ids.value), 0)
+  subnet_id              = element(split(",", data.aws_ssm_parameter.private_subnets_ids.value), 0)
   iam_instance_profile = "ec2-role-shell-script"
   tags = merge(
     var.common_tags,
@@ -111,7 +111,7 @@ resource "aws_autoscaling_group" "web" {
   health_check_grace_period = 60
   health_check_type         = "ELB"
   desired_capacity          = 2
-  vpc_zone_identifier       = split(",", data.aws_ssm_parameter.private_subnet_ids.value)
+  vpc_zone_identifier       = split(",", data.aws_ssm_parameter.private_subnets_ids.value)
   target_group_arns = [ aws_lb_target_group.web.arn ]
   
   launch_template {
