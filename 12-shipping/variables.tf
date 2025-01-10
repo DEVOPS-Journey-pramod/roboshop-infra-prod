@@ -23,5 +23,5 @@ variable "zone_name" {
   default = "pka.in.net"
 }
 variable "iam_instance_profile" {
-  default = "ShellScriptRoleForRoboshop"
+  default = "ec2-role-shell-script"
 }

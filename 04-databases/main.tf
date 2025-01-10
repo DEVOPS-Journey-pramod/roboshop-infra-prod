@@ -147,7 +147,7 @@ module "rabbitmq" {
   instance_type          = "t3.small"
   vpc_security_group_ids = [data.aws_ssm_parameter.rabbitmq_sg_id.value]
   subnet_id              = local.database_subnet_id
-  iam_instance_profile = "ShellScriptRoleForRoboshop"
+  iam_instance_profile = "ec2-role-shell-script"
   tags = merge(
     var.common_tags,
     {
