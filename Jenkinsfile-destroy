@@ -22,7 +22,6 @@ pipeline{
     }
 
     //build stages
-    
     stages {
         
             // stage('deestroy catalogue deployment') {
@@ -38,7 +37,7 @@ pipeline{
                         // terraform init --backend-config=prod/backend.tf -reconfigure
                         // terraform apply -var-file=prod/prod.tfvars -var=app_version=${params.version} -auto-approve
                         // pwd
-                        echo 'catalogue deployment destroyed'
+                        // echo 'catalogue deployment destroyed'
                     // """
                     // }
             // }
