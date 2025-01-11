@@ -1,6 +1,6 @@
-variable "vpc_cidr" {
-  default = "192.168.1.0/16"
-}
+# variable "vpc_cidr" {
+#   default = "192.168.1.0/16"
+# }
 variable "common_tags" {
   default = {
     Project = "roboshop"
@@ -38,12 +38,18 @@ variable "project_environment" {
     default = "prod"
     type = string
 }
+variable "vpc_cidr" {
+  default = "192.168.0.0/16"
+}
+
 variable "public_subnet_cidr" {
-  default = ["192.168.1.0/24", "192.168.2.0/24"]
+  default = ["192.168.0.0/24", "192.168.1.0/24"]
 }
+
 variable "private_subnet_cidr" {
-  default = ["192.168.11.0/24", "192.168.12.0/24"]
+  default = ["192.168.2.0/24", "192.168.3.0/24"]
 }
+
 variable "database_subnet_cidr" {
-  default = ["192.168.31.0/24", "192.168.32.0/24"]
+  default = ["192.168.4.0/24", "192.168.5.0/24"]
 }
