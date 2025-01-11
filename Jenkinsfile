@@ -27,6 +27,7 @@ pipeline{
             steps {
                sh """
                   echo 'creating VPC'
+                  export TF_LOG=DEBUG
                   pwd
                   cd 01-vpc
                   pwd
