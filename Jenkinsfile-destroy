@@ -1,7 +1,6 @@
 // Jenkinsfile (Declarative Pipeline) 
 pipeline{
     agent {
-        // run on the AGENT-1 node
         node {
             label 'AGENT-1'
         }
@@ -15,7 +14,6 @@ pipeline{
         disableConcurrentBuilds()
     }
     // we need to get version from the application for this we use pipeline, for this we will use pipeline utilities plugin
-    // this can be used across pipeline
     environment {
         packageVersion = ''
         nexusURL = 'nexus.pka.in.net:8081'
@@ -23,24 +21,6 @@ pipeline{
 
     //build stages
     stages {
-        
-            // stage('deestroy catalogue deployment') {
-            //         steps {
-            //         sh """
-                        // echo "current build version is ${params.version}"
-                        // echo "Environment is ${params.environment}"
-                        // echo 'destroying 06.5-catalogue prod deployment'
-                        // git clone https://github.com/PramodCodes/catalogue-deploy.git
-                        // cd catalogue-deploy
-                        // cd terraform
-                        // pwd
-                        // terraform init --backend-config=prod/backend.tf -reconfigure
-                        // terraform apply -var-file=prod/prod.tfvars -var=app_version=${params.version} -auto-approve
-                        // pwd
-                        // echo 'catalogue deployment destroyed'
-                    // """
-                    // }
-            // }
             stage('06-catalogue') {
                     steps {
                     sh """
